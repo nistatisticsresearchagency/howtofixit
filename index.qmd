@@ -74,9 +74,12 @@ How to fix it: check the name of your file is right, including the extension. Ch
 ## Packages
 
 ```{r}
+#| eval: false
 library(xyz)
+#> Error in library(xyz) : there is no package called ‘xyz’
 
 xyz::fn()
+#> Error in loadNamespace(x) : there is no package called ‘xyz’
 ```
 
 What it means: you're trying to use a package you don't have installed, either by loading the package with `library()` or using a function from it like `stats::cov()`.
