@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "howtofixit",
+    "section": "",
+    "text": "Common problems in R and how to fix them!"
+  },
+  {
+    "objectID": "index.html#typos",
+    "href": "index.html#typos",
+    "title": "howtofixit",
+    "section": "Typos",
+    "text": "Typos\n\nPaste(\"my\", \"text\")\n#&gt; Error in Paste(\"my\", \"text\"): could not find function \"Paste\"\n\nWhat it means: there isn’t a function called Paste.\nHow to fix it: check the spelling, names in R are case-sensitive and the function is called Paste().\n\nsubset(df, TRUE)\n#&gt; Error in x[subset & !is.na(subset)]: object of type 'closure' is not subsettable\n\nWhat it means: We commonly use df as the name for a data-frame, but df is also the name of a function and things like subset() don’t work on functions.\nHow to fix it: check what your data-frame is called and it’s definitely been created.\n\nfilter(mtcars, wt &gt; 2)\n#&gt; Error: object 'wt' not found\n\nWhat it means: you’ve tried to use the base filter() function but probably wanted to use filter() from dplyr instead.\nHow to fix it: make sure you run library(dplyr) first! Or refer to it as dplyr::filter().\n\nmean(mtcars)\n#&gt; Warning in mean.default(mtcars): argument is not numeric or logical: returning\n#&gt; NA\n#&gt; [1] NA\n\nWhat it means: mean() works with numbers and mtcars is a data-frame.\nHow to fix it: if you want the mean of a specific column (say wt), try mean(mtcars$wt).\n\nx &lt;- 2\nif (x = 2) {\n  print(\"x = 2\")\n}\n#&gt; Error in parse(text = input): &lt;text&gt;:2:7: unexpected '='\n#&gt; 1: x &lt;- 2\n#&gt; 2: if (x =\n#&gt;          ^\n\nWhat it means: R doesn’t know what if (x = 2) means!\nHow to fix it: to check if x is 2, use x == 2 rather than x = 2."
+  },
+  {
+    "objectID": "index.html#files-and-folders",
+    "href": "index.html#files-and-folders",
+    "title": "howtofixit",
+    "section": "Files and folders",
+    "text": "Files and folders\n\nread.csv(\"data.csv\")\n#&gt; Warning in file(file, \"rt\"): cannot open file 'data.csv': No such file or\n#&gt; directory\n#&gt; Error in file(file, \"rt\"): cannot open the connection\n\nWhat it means: there isn’t a file called data.csv in the folder you’re working from.\nHow to fix it: check the name of your file is right, including the extension. Check where you’re running R from with getwd(). You might find it helpful to use RStudio projects to make sure you’re always working in the right place."
+  },
+  {
+    "objectID": "index.html#packages",
+    "href": "index.html#packages",
+    "title": "howtofixit",
+    "section": "Packages",
+    "text": "Packages\n\nlibrary(xyz)\n#&gt; Error in library(xyz): there is no package called 'xyz'\n\nxyz::fn()\n#&gt; Error in loadNamespace(x): there is no package called 'xyz'\n\nWhat it means: you’re trying to use a package you don’t have installed, either by loading the package with library() or using a function from it like stats::cov().\nHow to fix it: try installing the package with install.packages(\"xyz\").\n\ninstall.packages(purrr)\n#&gt; Error in install.packages : object 'purrr' not found\n\nWhat it means: install.packages() is looking for an object called purrr to get the package name from.\nHow to fix it: make sure you quote the name of packages you want to install: install.packages(\"purrr\").\n\ninstall.packages(\"isthisapackagename\")\n#&gt; Installing package into 'C:/Users/dof-paulinm/Documents/R/win-library/4.4'\n#&gt; (as 'lib' is unspecified)\n#&gt; Warning: package 'isthisapackagename' is not available for this version of R\n#&gt; \n#&gt; A version of this package for your version of R might be available elsewhere,\n#&gt; see the ideas at\n#&gt; https://cran.r-project.org/doc/manuals/r-patched/R-admin.html#Installing-packages\n\nWhat it means: there isn’t a package with this name available to install.\nHow to fix it: check the spelling of the package name (remember they’re case-sensitive). If that doesn’t fix it, try searching for the package name on google to see if it’s still on CRAN.\n\nlibrary(rlang)\ninstall.packages(\"rlang\")\n#&gt; Error in install.packages : Updating loaded packages\n\nWhat it means: you’ve tried to install a package that is already in use. This could be because you’ve already loaded it with library(), or it could be a package used by RStudio.\nHow to fix it: try restarting R (Ctrl + Shift + F10 in RStudio) and installing the package in a fresh session. If that doesn’t work, try opening R directly from the start menu and installing the package from there.\n\ninstall.packages(\"xyz\")\n#&gt; Warning in install.packages :\n#&gt;  installation of package ‘xyz’ had non-zero exit status\n\nWhat it means: install.packages() hasn’t worked. This can happen for a few different reasons, like having more than one R session running or trying to install a package from source.\nHow to fix it: try install.packages(\"xyz\", type = \"win.binary\", dependencies = TRUE). If that doesn’t fix it, make sure you don’t have any other R sessions running and try installing in a fresh R session."
+  }
+]
