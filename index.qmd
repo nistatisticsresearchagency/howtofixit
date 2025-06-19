@@ -1,6 +1,7 @@
 ---
 title: "howtofixit"
 execute:
+  freeze: auto
   error: true
   warning: true
   message: true
