@@ -22,7 +22,7 @@ Paste("my", "text")
 
 What it means: there isn't a function called `Paste`.
 
-How to fix it: check the spelling, names in R are case-sensitive and the function is called `Paste()`.
+How to fix it: check the spelling, names in R are case-sensitive and the function is called `paste()`.
 
 ```{r}
 subset(df, TRUE)
