@@ -1,0 +1,31 @@
+---
+title: "Git"
+execute:
+  freeze: auto
+  error: true
+  warning: true
+  message: true
+knitr:
+  opts_chunk:
+    collapse: true
+    comment: "#>"
+---
+
+## Unable to push changes
+
+If you're having difficulty pushing changes using RStudio's git pane, try running `git push -u origin main` in the terminal. If you get an error message like `fatal: unable to access 'https://github.com/XYZ'`, double check your configuration by running `git config --global --list` in the terminal. It should show something like this (don't worry if yours isn't exactly the same):
+
+```{.bash}
+user.name=Mark Paulin
+user.email=mark.paulin@nisra.gov.uk
+http.sslbackend=schannel
+credential.helper=manager
+init.defaultbranch=main
+```
+
+You shouldn't have any settings related to proxies, lines starting `https.proxy` or `http.proxy`. If you do, remove those by running:
+
+```{.bash}
+git config --global --unset-all https.proxy
+git config --global --unset-all http.proxy
+```

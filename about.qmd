@@ -1,0 +1,9 @@
+---
+title: "About"
+---
+
+## Can't find something?
+
+If you have a problem and can't find a fix for it on here, you can create a new [issue](https://github.com/nistatisticsresearchagency/howtofixit/issues). If you have a solution to a problem that isn't covered, feel free to open an issue or submit a [pull request](https://github.com/nistatisticsresearchagency/howtofixit/pulls).
+
+

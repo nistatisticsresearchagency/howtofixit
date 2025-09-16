@@ -26,5 +26,33 @@
     "title": "howtofixit",
     "section": "Packages",
     "text": "Packages\n\nlibrary(xyz)\n#&gt; Error in library(xyz) : there is no package called ‘xyz’\n\nxyz::fn()\n#&gt; Error in loadNamespace(x) : there is no package called ‘xyz’\n\nWhat it means: you’re trying to use a package you don’t have installed, either by loading the package with library() or using a function from it like stats::cov().\nHow to fix it: try installing the package with install.packages(\"xyz\").\n\ninstall.packages(purrr)\n#&gt; Error in install.packages : object 'purrr' not found\n\nWhat it means: install.packages() is looking for an object called purrr to get the package name from.\nHow to fix it: make sure you quote the name of packages you want to install: install.packages(\"purrr\").\n\ninstall.packages(\"isthisapackagename\")\n#&gt; Installing package into 'C:/Users/dof-paulinm/Documents/R/win-library/4.4'\n#&gt; (as 'lib' is unspecified)\n#&gt; Warning: package 'isthisapackagename' is not available for this version of R\n#&gt; \n#&gt; A version of this package for your version of R might be available elsewhere,\n#&gt; see the ideas at\n#&gt; https://cran.r-project.org/doc/manuals/r-patched/R-admin.html#Installing-packages\n\nWhat it means: there isn’t a package with this name available to install.\nHow to fix it: check the spelling of the package name (remember they’re case-sensitive). If that doesn’t fix it, try searching for the package name on google to see if it’s still on CRAN.\n\nlibrary(rlang)\ninstall.packages(\"rlang\")\n#&gt; Error in install.packages : Updating loaded packages\n\nWhat it means: you’ve tried to install a package that is already in use. This could be because you’ve already loaded it with library(), or it could be a package used by RStudio.\nHow to fix it: try restarting R (Ctrl + Shift + F10 in RStudio) and installing the package in a fresh session. If that doesn’t work, try opening R directly from the start menu and installing the package from there.\n\ninstall.packages(\"xyz\")\n#&gt; Warning in install.packages :\n#&gt;  installation of package ‘xyz’ had non-zero exit status\n\nWhat it means: install.packages() hasn’t worked. This can happen for a few different reasons, like having more than one R session running or trying to install a package from source.\nHow to fix it: try install.packages(\"xyz\", type = \"win.binary\", dependencies = TRUE). If that doesn’t fix it, make sure you don’t have any other R sessions running and try installing in a fresh R session."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "If you have a problem and can’t find a fix for it on here, you can create a new issue. If you have a solution to a problem that isn’t covered, feel free to open an issue or submit a pull request."
+  },
+  {
+    "objectID": "about.html#cant-find-something",
+    "href": "about.html#cant-find-something",
+    "title": "About",
+    "section": "",
+    "text": "If you have a problem and can’t find a fix for it on here, you can create a new issue. If you have a solution to a problem that isn’t covered, feel free to open an issue or submit a pull request."
+  },
+  {
+    "objectID": "git.html",
+    "href": "git.html",
+    "title": "Git",
+    "section": "",
+    "text": "If you’re having difficulty pushing changes using RStudio’s git pane, try running git push -u origin main in the terminal. If you get an error message like fatal: unable to access 'https://github.com/XYZ', double check your configuration by running git config --global --list in the terminal. It should show something like this (don’t worry if yours isn’t exactly the same):\nuser.name=Mark Paulin\nuser.email=mark.paulin@nisra.gov.uk\nhttp.sslbackend=schannel\ncredential.helper=manager\ninit.defaultbranch=main\nYou shouldn’t have any settings related to proxies, lines starting https.proxy or http.proxy. If you do, remove those by running:\ngit config --global --unset-all https.proxy\ngit config --global --unset-all http.proxy"
+  },
+  {
+    "objectID": "git.html#unable-to-push-changes",
+    "href": "git.html#unable-to-push-changes",
+    "title": "Git",
+    "section": "",
+    "text": "If you’re having difficulty pushing changes using RStudio’s git pane, try running git push -u origin main in the terminal. If you get an error message like fatal: unable to access 'https://github.com/XYZ', double check your configuration by running git config --global --list in the terminal. It should show something like this (don’t worry if yours isn’t exactly the same):\nuser.name=Mark Paulin\nuser.email=mark.paulin@nisra.gov.uk\nhttp.sslbackend=schannel\ncredential.helper=manager\ninit.defaultbranch=main\nYou shouldn’t have any settings related to proxies, lines starting https.proxy or http.proxy. If you do, remove those by running:\ngit config --global --unset-all https.proxy\ngit config --global --unset-all http.proxy"
   }
 ]
