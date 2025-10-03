@@ -1,0 +1,17 @@
+{
+  "hash": "2cf1f127ab91c70a5bfd4bfa7faf714f",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"RMarkdown\"\nexecute:\n  freeze: auto\n  error: true\n  warning: true\n  message: true\nknitr:\n  opts_chunk:\n    collapse: true\n    comment: \"#>\"\n---\n\n\n\n\n## Duplicated headings in table of contents\n\nIf your document has headings appearing more than once in the wrong place, it might be because of an unclosed tag, like a `<div>` that doesn't have a corresponding `</div>`.\n\nThis is an example of an RMarkdown document which has a broken table of contents (you can see the HTML output [here](broken_toc.html)):\n\n```{.markdown}\n---\ntitle: \"Document\"\noutput:\n  html_document:\n    toc: true\n    toc_float: true\n---\n\n# Header 1\n\n<div>\ntext\n\n# Header 2\n\ntext\n```\n\nThis produces a warning message (possibly in the \"Background Jobs\" tab in RStudio) like this:\n\n```{.bash}\n[WARNING] Div at tmp.knit.md line 11 column 1 unclosed at tmp.knit.md line 19 column 1, closing implicitly.\n```\n\n",
+    "supporting": [
+      "rmarkdown_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

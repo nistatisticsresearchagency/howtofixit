@@ -1,0 +1,44 @@
+---
+title: "RMarkdown"
+execute:
+  freeze: auto
+  error: true
+  warning: true
+  message: true
+knitr:
+  opts_chunk:
+    collapse: true
+    comment: "#>"
+---
+
+## Duplicated headings in table of contents
+
+If your document has headings appearing more than once in the wrong place, it might be because of an unclosed tag, like a `<div>` that doesn't have a corresponding `</div>`.
+
+This is an example of an RMarkdown document which has a broken table of contents (you can see the HTML output [here](broken_toc.html)):
+
+```{.markdown}
+---
+title: "Document"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+# Header 1
+
+<div>
+text
+
+# Header 2
+
+text
+```
+
+This produces a warning message (possibly in the "Background Jobs" tab in RStudio) like this:
+
+```{.bash}
+[WARNING] Div at tmp.knit.md line 11 column 1 unclosed at tmp.knit.md line 19 column 1, closing implicitly.
+```
+
