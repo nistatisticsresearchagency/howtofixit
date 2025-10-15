@@ -88,6 +88,6 @@
     "href": "python.html#troubleshooting",
     "title": "Python",
     "section": "Troubleshooting",
-    "text": "Troubleshooting\nIf nothing happens when you press Shift + Enter, try closing and re-opening VS Code. If that doesn’t fix it, open up the terminal window by pressing Ctrl + ' and open the “Output” tab. Go to the drop-down menu and pick “Python Locator” if it’s there. If it looks something like the screenshot below, double-check Python Locator under settings (it should be “js”), then try restarting VS Code again:\n\nIf that doesn’t work, or if “Python Locator” isn’t an option in the outputs menu, pick “Python” instead and take a screenshot. Then open an issue and include the screenshot. It should look something like this:"
+    "text": "Troubleshooting\nIf nothing happens when you press Shift + Enter, try closing and re-opening VS Code. If that doesn’t fix it, open up the terminal window by pressing Ctrl + ' and open the “Output” tab. Go to the drop-down menu and pick “Python Locator” if it’s there. If it looks something like the screenshot below, double-check Python Locator under settings (it should be “js”), then try restarting VS Code again:\n\nIf that doesn’t work, or if “Python Locator” isn’t an option in the outputs menu, pick “Python” instead and take a screenshot. Then open an issue and include the screenshot. It should look something like this:\n\nIf a message appears in the bottom-left corner with something about setting up virtual environments or detecting interpreters, try disabling the “Python Environments” extension."
   }
 ]

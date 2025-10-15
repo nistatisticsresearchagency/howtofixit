@@ -40,5 +40,4 @@ If that doesn't work, or if "Python Locator" isn't an option in the outputs menu
 
 ![](assets/img/py8.png){fit-alt="Screenshot showing the output tab in VS Code with 'Output' and 'Python' highlighted"}
 
-
-
+If a message appears in the bottom-left corner with something about setting up virtual environments or detecting interpreters, try disabling the "Python Environments" extension.
