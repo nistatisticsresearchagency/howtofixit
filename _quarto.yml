@@ -11,6 +11,7 @@ website:
       - git.qmd
       - rmarkdown.qmd
       - about.qmd
+      - python.qmd
 
 format:
   html:
