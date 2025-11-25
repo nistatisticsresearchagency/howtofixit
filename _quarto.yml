@@ -10,8 +10,8 @@ website:
         text: Home
       - git.qmd
       - rmarkdown.qmd
-      - about.qmd
       - python.qmd
+      - about.qmd
 
 format:
   html:
