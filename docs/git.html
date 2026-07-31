@@ -195,6 +195,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>You shouldn’t have any settings related to proxies, lines starting <code>https.proxy</code> or <code>http.proxy</code>. If you do, remove those by running:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> <span class="at">--unset-all</span> https.proxy</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> <span class="at">--unset-all</span> http.proxy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If you’re still having problems at this point, it might be easier to remove your git configuration completely. Look for a file called <code>.gitconfig</code> in your user folder, something like <code>C:\Users\[Username]\.gitconfig</code>, and delete it. You may need to set your name and email again next time you’re trying to push changes.</p>
 
 
 </section>

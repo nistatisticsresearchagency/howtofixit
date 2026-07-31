@@ -1,9 +1,11 @@
 {
-  "hash": "838021be8165e23c0f2b26206626a9eb",
+  "hash": "3944d66d00f00338eba6c57ab4cfc779",
   "result": {
     "engine": "knitr",
-    "markdown": "---\ntitle: \"Git\"\nexecute:\n  freeze: auto\n  error: true\n  warning: true\n  message: true\nknitr:\n  opts_chunk:\n    collapse: true\n    comment: \"#>\"\n---\n\n\n\n\n## Unable to push changes\n\nIf you're having difficulty pushing changes using RStudio's git pane, try running `git push -u origin main` in the terminal. If you get an error message like `fatal: unable to access 'https://github.com/XYZ'`, double check your configuration by running `git config --global --list` in the terminal. It should show something like this (don't worry if yours isn't exactly the same):\n\n```{.bash}\nuser.name=Mark Paulin\nuser.email=mark.paulin@nisra.gov.uk\nhttp.sslbackend=schannel\ncredential.helper=manager\ninit.defaultbranch=main\n```\n\nYou shouldn't have any settings related to proxies, lines starting `https.proxy` or `http.proxy`. If you do, remove those by running:\n\n```{.bash}\ngit config --global --unset-all https.proxy\ngit config --global --unset-all http.proxy\n```\n",
-    "supporting": [],
+    "markdown": "---\ntitle: \"Git\"\nexecute:\n  freeze: auto\n  error: true\n  warning: true\n  message: true\nknitr:\n  opts_chunk:\n    collapse: true\n    comment: \"#>\"\n---\n\n\n\n\n## Unable to push changes\n\nIf you're having difficulty pushing changes using RStudio's git pane, try running `git push -u origin main` in the terminal. If you get an error message like `fatal: unable to access 'https://github.com/XYZ'`, double check your configuration by running `git config --global --list` in the terminal. It should show something like this (don't worry if yours isn't exactly the same):\n\n```{.bash}\nuser.name=Mark Paulin\nuser.email=mark.paulin@nisra.gov.uk\nhttp.sslbackend=schannel\ncredential.helper=manager\ninit.defaultbranch=main\n```\n\nYou shouldn't have any settings related to proxies, lines starting `https.proxy` or `http.proxy`. If you do, remove those by running:\n\n```{.bash}\ngit config --global --unset-all https.proxy\ngit config --global --unset-all http.proxy\n```\n\nIf you're still having problems at this point, it might be easier to remove your git configuration completely. Look for a file called `.gitconfig` in your user folder, something like `C:\\Users\\[Username]\\.gitconfig`, and delete it. You may need to set your name and email again next time you're trying to push changes.\n",
+    "supporting": [
+      "git_files"
+    ],
     "filters": [
       "rmarkdown/pagebreak.lua"
     ],
